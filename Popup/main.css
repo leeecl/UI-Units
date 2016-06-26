@@ -1,0 +1,53 @@
+body{
+	font-family: "Lantinghei SC","Open Sans",Arial,
+				"Hiragino Sans GB","Microsoft Yahei",
+				sans-serif;
+	font-size: 14px;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	border-bottom: 3px solid #999;
+}
+li{
+	border-top: 3px solid #999;
+	padding: 15px;
+	overflow: auto;
+}
+.img_box{
+	float: left;
+}
+.img_box img{
+	width: 100px;
+	height: 100px;
+}
+.intro{
+	margin-left: 120px;
+}
+.intro h4{
+	color: #333;
+	margin: 0;
+	font-size: 18px;
+}
+.intro h4 a{
+	text-decoration: none;
+	color: black;
+}
+.intro h4 a:hover{
+	color: #32A0D5;
+}
+.abstract{
+	font-size: 0.65rem;
+	color: #999;
+	margin-top: 15px;
+}
+button{
+	background-color: #585858;
+	color: #999;
+	padding: 10px 20px;
+	display: inline-block;
+	border: none;
+	font-size: 14px;
+	margin-left: 10px;
+	cursor:pointer;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UI之浮出层</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<style type="text/css">
+#mask{
+	background-color: #000;
+	opacity: 0.75;
+	filter: opacity(75);
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 1000px;	/*temporary*/
+	width: 100%;
+	z-index: 1000;
+}
+#popup{
+	background-color: white;
+	color: black;
+	position: fixed;
+	left: 30%;
+	top: 30%;
+	z-index: 1001;
+}
+#box_hd{
+	background-color: #333;
+	color: #999;
+	padding: 10px;
+}
+#popup_box{
+	padding: 15px;
+}
+
+</style>
+<script type="text/javascript">
+// function to add mask node and popup node to page
+function show(){
+	// page height
+	var sHeight = document.documentElement.scrollHeight;
+	var sWidth = document.documentElement.scrollWidth;
+	// visible area height
+	var vHeight = document.documentElement.clientHeight;
+	var vWidth = document.documentElement.clientWidth;
+	// mask node
+	var oMask = document.createElement("div");
+		oMask.id = "mask";
+		oMask.style.height = sHeight+"px";
+	// popup box node
+	var oPopup = document.createElement("div");
+		oPopup.id = "popup"
+		oPopup.innerHTML = "<div id='box_hd'>这是一个浮出层。</div><div id='popup_box'><p>这是一个浮出层。</p><button id='confirm'>确定</button><button id='cancel'>取消</button></div>";
+	document.body.appendChild(oMask);
+	document.body.appendChild(oPopup);
+	// popup size
+	var pHeight = oPopup.offsetHeight;
+	var pWidth = oPopup.offsetWidth;
+	//alert(pWidth);
+	// make popup window in the middle of visible area
+		oPopup.style.left = (vWidth-pWidth)/2+"px";
+      	oPopup.style.top = (vHeight-pHeight)/2+"px";
+
+	// close popup
+	var buttons = document.getElementsByTagName("button");
+	for (var i = 0; i <	buttons.length; i++) {
+		oMask.onclick = buttons[i].onclick = function(){
+			//function to close mask node and popup node
+			document.body.removeChild(oMask);
+			document.body.removeChild(oPopup);
+		}
+	}
+}
+
+
+function markselection(){
+	this.style.background = "red";
+}
+
+window.onload = function(){
+	var titles = document.getElementsByClassName("title");
+	for (var i = 0; i <	titles.length; i++) {
+		titles[i].onclick = show;
+	}
+}
+</script>
+</head>
+<body>
+<ul>
+<li>
+	<div class="img_box"><img src="img/magnifier.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">完整的技术参考手册</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+<li>
+	<div class="img_box"><img src="img/Watch.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">前端开发人员常犯的10个错误</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+<li>
+	<div class="img_box"><img src="img/wrench.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">八种导致 APP 内存泄漏的问题</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+<li>
+	<div class="img_box"><img src="img/magnifier.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">完整的技术参考手册</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+<li>
+	<div class="img_box"><img src="img/Watch.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">前端开发人员常犯的10个错误</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+<li>
+	<div class="img_box"><img src="img/wrench.png"></div>
+	<div class="intro">
+		<h4><a href="#" class="title">八种导致 APP 内存泄漏的问题</a></h4>
+		<div class="abstract">jQuery事件处理 1.ready事件与onload事件 前者只要页面的DOM结构加载后便触发 后者必须在页面全部元素加载成功才触发</div>
+	</div>
+</li>
+</ul>
+
+<!-- <div id="mask"></div>
+<div id="popup">
+	<div id="box_hd">这是一个浮出层。</div>
+	<div id="popup_box">
+		<p>这是一个浮出层。</p>
+		<button id="confirm">确定</button>
+		<button id="cancel">取消</button>
+	</div>
+</div> -->
+</body>
+</html>
