@@ -1,0 +1,30 @@
+body{
+	font-family: "Lantinghei SC","Open Sans",Arial,
+				"Hiragino Sans GB","Microsoft Yahei",
+				sans-serif;
+	font-size: 14px;
+}
+table{
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid #999;
+	text-align: center;
+}
+caption{
+	padding: 5px 0;
+}
+th{
+	background-image: url("bg.gif");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: #999;
+	padding: 10px 20px;
+	border: 1px solid #333;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+td{
+	border: 1px solid #999;
+	padding: 5px 0px;
+}

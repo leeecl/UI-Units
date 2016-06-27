@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UI组件之排序表格</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script type="text/javascript">
+window.onload = function(){
+	var rheads = document.getElementsByTagName("th");
+	for (var i=0; i<rheads.length; i++) {
+		rheads[i].onclick = markselection;
+		// rheads[i].addEventListener("click", sortTable(i), false);
+		// rheads[i].onclick = sortTable(i);
+	}
+	// sort the column given column number
+	function sortTable(i){
+		// sort numbers in ascending orders
+		rheads[i].
+	}
+}
+function markselection(){
+	this.style.backgroundColor = "red";
+}
+</script>
+</head>
+<body>
+<table>
+<caption>Sample Sorting Table</caption>
+<thead>
+	<tr>
+		<th>Name</th>
+		<th>Maths</th>
+		<th>English</th>
+		<th>Physics</th>
+		<th>Total</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>Alice</td>
+		<td>80</td>
+		<td>90</td>
+		<td>70</td>
+		<td>--</td>
+	</tr>
+	<tr>
+		<td>John</td>
+		<td>90</td>
+		<td>60</td>
+		<td>90</td>
+		<td>--</td>
+	</tr>
+	<tr>
+		<td>Tom</td>
+		<td>60</td>
+		<td>100</td>
+		<td>70</td>
+		<td>--</td>
+	</tr>
+</tbody>
+</table>
+</body>
+</html>
